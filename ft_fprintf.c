@@ -35,9 +35,8 @@ void	ft_fselector(va_list ap, const char *str, int *len, int fd)
 		*len += ft_putchar(str[0], fd);
 }
 
-int	ft_fprintf(const char *str,int fd, ...)
+int	ft_fprintf(int fd, const char *str, ...)
 {
-	int		ret;
 	va_list	ap;
 	int		len;
 
@@ -45,7 +44,6 @@ int	ft_fprintf(const char *str,int fd, ...)
 	va_start (ap, str);
 	while (*str)
 	{
-		ret = 0;
 		if (*str == '%')
 		{	
 			str++;
